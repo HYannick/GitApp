@@ -13,14 +13,15 @@ $(function(){
                         ease: Circ.easeOut
                     }
                 );
+
             tween.fromTo(".search", 1, {opacity:0, top: 500}, {opacity:1,top: 0, ease: Circ.easeOut});
-        tween.to(
-            'body',
-            1,
-            {
-               overflow: 'auto'
-            }
-        );
+            tween.to(
+                'body',
+                1,
+                {
+                   overflow: 'auto'
+                }
+            );
 
 
     });

@@ -33,7 +33,7 @@ a:focus {
   overflow: hidden;
 }
 body {
-  background: url('img/main-bg.jpg') center center fixed no-repeat;
+  background: url('img/pattern.png') center center fixed no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   overflow: hidden;
@@ -50,7 +50,7 @@ body {
   z-index: 999999;
 }
 .panel-user {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.4);
   display: table;
   margin-top: 30px;
   border-radius: 5px;
@@ -450,7 +450,7 @@ a#submit:hover {
   width: 100%;
   z-index: 1;
   margin-bottom: 10px;
-  background: #292c37;
+  background: rgba(41, 44, 55, 0.5);
   position: relative;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -467,15 +467,12 @@ a#submit:hover {
   left: 0;
   width: 0;
   z-index: -1;
-  background: rgba(205, 179, 128, 0.9);
+  background: rgba(41, 44, 55, 0.7);
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-}
-.repoList li:hover {
-  background: rgba(205, 179, 128, 0.9);
 }
 .repoList li:hover:after {
   width: 100%;
@@ -548,7 +545,7 @@ a#submit:hover {
 }
 .list-wrapper {
   white-space: pre-line;
-  overflow-y: hidden;
+  overflow-y: scroll;
   position: relative;
   height: 550px;
 }
@@ -564,6 +561,7 @@ a#submit:hover {
   width: 100%;
   position: absolute;
   bottom: 0;
+  opacity: 0.3;
   height: 20px;
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -598,7 +596,7 @@ a#submit:hover {
 }
 .noUser {
   text-align: center;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.4);
   margin-top: 30px;
   padding: 84px;
   border-radius: 5px;

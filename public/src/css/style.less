@@ -46,7 +46,7 @@ a{
 //*********
 
 body{
-  background: url('img/main-bg.jpg') center center fixed no-repeat;
+  background: url('img/pattern.png') center center fixed no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   overflow: hidden;
@@ -63,7 +63,7 @@ body{
   z-index: 999999;
 }
 .panel-user {
-  background-color: rgba(255, 255, 255, 0.90);
+  background-color: rgba(255, 255, 255, 0.4);
   display: table;
   margin-top: 30px;
   border-radius: 5px;
@@ -484,7 +484,7 @@ a#submit {
     width: 100%;
     z-index: 1;
     margin-bottom: 10px;
-    background: @main-dark;
+    background: fadeout(@main-dark,50%);
     position: relative;
     &:after{
       content: '';
@@ -495,7 +495,7 @@ a#submit {
       left: 0;
       width: 0;
       z-index: -1;
-      background: fadeout(@main-orange,10%);
+      background: fadeout(@main-dark,30%);
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       -ms-transition: 0.5s;
@@ -504,7 +504,7 @@ a#submit {
     }
     .Transition;
     &:hover{
-      background: fadeout(@main-orange,10%);
+
       &:after{
        width: 100%;
       }
@@ -571,7 +571,7 @@ a#submit {
 }
 .list-wrapper {
   white-space: pre-line;
-  overflow-y: hidden;
+  overflow-y: scroll;
   position: relative;
   height: 550px;
 }
@@ -588,6 +588,7 @@ a#submit {
     width: 100%;
     position: absolute;
     bottom: 0;
+    opacity: 0.3;
     height: 20px;
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -628,7 +629,7 @@ a#submit {
 
 .noUser {
   text-align: center;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.4);
   margin-top: 30px;
   padding: 84px;
   border-radius: 5px;
