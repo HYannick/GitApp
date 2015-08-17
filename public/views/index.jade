@@ -1,0 +1,102 @@
+doctype html
+html(lang='en')
+   head
+      meta(charset='UTF-8')
+      title [RH-test] Git-app
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      base(href='/')
+      // CSS
+      link(rel='stylesheet', href='/src/css/vendors/bootstrap.min.css')
+      link(rel='stylesheet', href='/src/css/vendors/bootstrap.min.css')
+      link(rel='stylesheet', href='/src/css/helpers.css')
+      link(rel='stylesheet', href='/src/css/animate.css')
+      //link(rel='stylesheet', href='/src/perfect-scrollbar.css')
+      link(rel='stylesheet', href='/src/css/vendors/font-awesome.css')
+      link(rel='stylesheet', href='/dist/css/style.min.css')
+
+   body(ng-app='creayh', ng-controller='mainController as main')
+      //Preloader
+      .preload
+      //container principal
+      .container
+         //Module de recherche
+         .col-md-3.search
+            .panel-user
+               .panel-header
+                  h1.text-center.fs60
+                     b Git
+                     | app
+                  p.text-center Entrez le nom d'un utilisateur de Github et c'est parti !
+               form
+                  span.input.input--jiro(ng-class="{inputEmpty: username=='', inputFilled: username!=''}")
+                     input#username.input__field.input__field--jiro(type='text',ng-model='username')
+                     label.input__label.input__label--jiro(for='username')
+                        span.input__label-content.input__label-content--jiro username
+               button#submit.button.button--naira.button--round-s.button--border-thin(ng-click='getGitInfo()')
+                  i.button__icon.fa.fa-search
+                  span Rechercher
+
+         //Fin module de recherche
+
+         //Module de Resultat
+         .wrapper.col-md-9
+            div.cssFade(ng-show="userNotFound").noUser
+               span.fa.fa-frown-o.fs60
+               h2 Aucun utilisateur
+            div.cssFade(ng-show="loaded")
+               .panel-user
+                  .user-info
+                     div.col-md-4.text-center
+                        .col-md-12.col-sm-4.col-xs-12.pn
+                           .mask.avatar
+                              img(src="{{user.avatar_url}}")
+                        .col-md-12.col-sm-4.pn
+                           h1
+                              b {{user.name}}
+                           p
+                              b Type :
+                              | {{user.type}}
+                           p
+                              b Nombre de repos :
+                              | {{user.public_repos}}
+
+                           a(href="{{user.html_url}}" target="_blank").gitUrl
+                              span.fa.fa-github
+                              |  GitHub
+                  h3(ng-hide='reposFound').text-center  Aucun repo :(
+                  .list.col-md-8.col-sm-12
+
+                     div(ng-show='reposFound').mt20.repoFound
+                        h2 Repos List
+                        .mask.list-wrapper
+                           ul.repoList
+                              li(ng-repeat='repo in repos').repeated-item
+                                 .col-md-6.col-sm-6.pln
+                                    a(target='_blank' href='{{repo.html_url}}')
+                                       span.fa.fa-folder
+                                       |  {{repo.name}}
+                                 .col-md-6.col-sm-6
+                                    .col-md-4.col-xs-4.text-center
+                                       .medal
+                                          span.fa.fa-star
+                                          p {{repo.forks_count}}
+                                    .col-md-4.col-xs-4.text-center
+                                       .medal
+                                          span.fa.fa-eye.fs16
+                                          p {{repo.watchers}}
+                                    .col-md-4.col-xs-4.text-center
+                                       .medal
+                                          span.fa.fa-code-fork
+                                          p {{repo.forks_count}}
+         //Fin Module de Resultat
+      // Scripts Angular et jQuery
+      script(type='text/javascript', src='/libs/jquery.min.js')
+      script(type='text/javascript', src='/libs/angular.min.js')
+      //Scripts d'animation de l'application
+      script(type='text/javascript', src='/libs/angular-animate.min.js')
+      script(type='text/javascript', src='/libs/TweenMax.js')
+      script(type='text/javascript', src='/libs/TimelineMax.js')
+      //script(type='text/javascript', src='/libs/perfect-scrollbar.jquery.js')
+      // App / Scripts
+      script(type='text/javascript', src='/dist/js/app.min.js')
+      script(type='text/javascript', src='/dist/js/script.min.js')
